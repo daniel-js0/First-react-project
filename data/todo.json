@@ -1,0 +1,19 @@
+{
+  "todos": [
+    {
+      "task": "Learn react",
+      "id": 2,
+      "completed": false
+    },
+    {
+      "task": "learn tailwind",
+      "id": 3,
+      "completed": false
+    },
+    {
+      "task": "hello world",
+      "id": 8,
+      "completed": false
+    }
+  ]
+}
