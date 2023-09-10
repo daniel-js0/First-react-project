@@ -10,7 +10,7 @@ const Create = ({ darkMode4 }) => {
     
     const handleSubmit = (e) => {
        e.preventDefault();
-       const todo = { task };
+       const todo = { task };     
 
        setIsPending(true);
        

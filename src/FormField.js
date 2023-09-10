@@ -96,7 +96,7 @@ const FormField = ({ darkMode1 }) => {
           <Route path="/form2" >
            <Form2  secondWord={secondWord} darkMode1={ darkMode1 } Name={Name} Monthly={Monthly} setMonthly={setMonthly} 
            Clicked={Clicked} setClick={setClick}/>
-          </Route>
+         </Route>
           <Route path="/form3" >
            <Form3 darkMode1={ darkMode1 } Monthly={Monthly} selectedOption={selectedOption}
            setSelectedOption={setSelectedOption} />

@@ -19,7 +19,7 @@ const useFetch = (url) => {
       .then(data => {
         setData(data);
         setLoadPending(false);
-        setError(null);
+        setError(null); 
       })
       .catch(err => {
         if(err.name === 'AbortError'){

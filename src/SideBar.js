@@ -23,7 +23,7 @@ const SideBar = ({onClose, darkMode1,setOnClose }) => {
                 >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
+                  viewBox="0 0 24 24" 
                   fill="currentColor"
                   onClick={handleRemove}
                   className={`w-6 h-6 ${darkMode1 && 'text-white'}`}>     <path fillRule="evenodd" d="M2.646 2.646a.25.25 0 01.354 0L12 11.293l9.293-9.293a.25.25 0 01.354 0l1.414 1.414a.25.25 0 010 .354L13.293 12l9.293 9.293a.25.25 0 010 .354l-1.414 1.414a.25.25 0 01-.354 0L12 12.707l-9.293 9.293a.25.25 0 01-.354 0l-1.414-1.414a.25.25 0 010-.354L10.707 12 1.414 2.707a.25.25 0 010-.354l1.414-1.414z" clipRule="evenodd"/>

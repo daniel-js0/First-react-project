@@ -82,7 +82,7 @@ const Form2 = ({ darkMode1, Name, Monthly, setMonthly, Clicked, setClick, second
             <p className="ml-[4.95%] mt-1 tracking-wide text-gray-500 pb-4">
             You have the option of monthly or yearly billing.
             </p>
-            
+             
     
    <form onSubmit={handleSubmit}>
 

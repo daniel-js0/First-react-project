@@ -13,7 +13,7 @@ const TodoApp = ({ darkMode }) => {
     <div className={`h-screen rounded-md w-screen backdrop-blur-md ${darkMode ? 'text-white' : 'text-black'}`}>
       <NavTodo />
      
-       <Switch>
+       <Switch> 
           <Route path="/todo" >
           <HomeTodo darkMode4={ darkMode } />
           </Route>

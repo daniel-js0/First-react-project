@@ -97,8 +97,7 @@ const FinalPage = ({ Clicked, selectedOption, Monthly, darkMode1,Total, Title })
                     <p className="ml-4 mt-3 font-semibold text-lg md:text-xl tracking-wider">Total [{ Title }]</p>
                     <p className="mr-4 mt-3 font-semibold text-lg md:text-xl tracking-wider text-red-600"> ${Total}/{Title} </p>
                 </div>
-            </div>
-   
+            </div> 
         <div class="mt-16">
             <div class="flex justify-between mb-7">
                 <button onClick={handleBack}  className="back transition-all ease-in-out duration-200 ml-[7.5%] font-semibold invisibl">Go back</button>

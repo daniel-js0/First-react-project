@@ -16,7 +16,7 @@ const NavForm = ({darkMode1}) => {
                         YOUR INFO
                     </h1>
                 </div>
-            </div>
+            </div>  
 
             <div class="md:flex mt-6 ">
                 <Link to="/form2" className={`mt-9 px-4 py-2 md:px-0 md:py-0  w-8 h-8 text-center rounded-3xl border 
