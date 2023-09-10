@@ -34,7 +34,7 @@ function handleLightMode(w){
    <div className="App">
         <Navbar handleDarkMode={handleDarkMode} handleLightMode={handleLightMode} handleOpen={handleOpen} />
         {/* content starts here  */}
-      <div className={`h-[42rem]  bg-no-repeat bg-contain  bg-center  ${darkClick && 'bg-black'} ${lightClick && 'bg-white'} ${(onClose && darkClick) ? 'bg-black' : (onClose ? 'brightness-50 bg-stone-50' : '')}
+      <div className={`h-full  bg-no-repeat bg-contain  bg-center  ${darkClick && 'bg-black'} ${lightClick && 'bg-white'} ${(onClose && darkClick) ? 'bg-black' : (onClose ? 'brightness-50 bg-stone-50' : '')}
                  `} style={{ backgroundImage: `url(${darkClick ? logodark : logo})` }}>
        
        
