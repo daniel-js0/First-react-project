@@ -4,13 +4,14 @@
 @import 'tailwindcss/utilities';
 
 .button {
-  @apply  text-white    px-4 py-2 mt-7 rounded-md;
+  @apply  text-white    px-4 py-2 mt-4 rounded-md;
 }
 .button2 {
   @apply bg-gray-700 opacity-60 mt-1 text-white  px-2 py-1 rounded-md;
 }
 
 .bg { 
-  @apply bg-gradient-to-r from-cyan-300 to-fuchsia-500 saturate-50 brightness-150  ; 
+  @apply  saturate-50   ; 
 }
+
 
