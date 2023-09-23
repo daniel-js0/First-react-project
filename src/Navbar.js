@@ -35,7 +35,7 @@ const  Navbar = ({handleDarkMode, handleLightMode, handleOpen}) => {
 
         <div className={`flex md:justify-center justify-between h-14 w-full bg backdrop-blur-sm ${!darkClick ? ' bg-gradient-to-r from-green-700 to-teal-700 brightness-100 ': 'bg-gradient-to-r from-cyan-300 to-fuchsia-500 brightness-150'}`}>
 
-         <h1 className={`py-2.5 md:py-1 md:mr-28 md:ml-0 ml-7 text-lg md:text-4xl font-light first-letter:text-xl  md:first-letter:text-4xl first-letter:font-extrabold ${!darkClick && 'text-white'}`}>React Mini Project</h1>
+         <h1 className={`py-2.5 md:py-1 md:mr-28 md:ml-0 ml-7 text-2xl md:text-4xl font-light first-letter:text-3xl  md:first-letter:text-4xl first-letter:font-extrabold ${!darkClick && 'text-white'}`}>React Mini Project</h1>
          
          <div className="flex mt-3 md:ml-10">
          <svg 
@@ -64,6 +64,9 @@ const  Navbar = ({handleDarkMode, handleLightMode, handleOpen}) => {
          <Link to="/" className={`md:text-xl ml-3 md:flex hidden bg-slate-400 h-8 px-3 text-md bg-opacity-50 hover:text-red-700 text-slate-800   hover:bg-cyan-500 rounded-xl hover:bg-opacity-40 ${!darkClick && 'text-white'}`}>FormField</Link>
         
          <Link to="/todo" className={`md:text-xl md:mr-0 mr-2 ml-3 md:flex hidden bg-slate-400 h-8 px-3 text-md bg-opacity-50 hover:text-red-700 text-slate-800   hover:bg-cyan-500 rounded-xl hover:bg-opacity-40 ${!darkClick && 'text-white'}`}>TodoApp</Link>
+
+         <Link to="/data" className={`md:text-xl md:mr-0 mr-2 ml-3 md:flex hidden bg-slate-400 h-8 px-3 text-md bg-opacity-50 hover:text-red-700 text-slate-800   hover:bg-cyan-500 rounded-xl hover:bg-opacity-40 ${!darkClick && 'text-white'}`}>Data[db]</Link>
+
           
           
          

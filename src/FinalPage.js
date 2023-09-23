@@ -1,11 +1,12 @@
 import { useState,useEffect } from "react";
 import { useHistory } from "react-router-dom";
+import axios from "axios";
 
-const FinalPage = ({ Clicked, selectedOption, Monthly, darkMode1,Total, Title }) => {
-    const [Plan, setPlan] = useState('Arcade');
-    const [Addons, setAddons] = useState('Online Services');
-    const [Price, setPrice] = useState('$6/mon');
-    const [Price1, setPrice1 ] = useState('$3/mon');
+const FinalPage = ({ Clicked, selectedOption, Monthly, darkMode1,total, title, name, email, phonenumber, status, setStatus, clicked1, setClicked1 }) => {
+    const [plan, setPlan] = useState('Arcade');
+    const [addons, setAddons] = useState('Online Services');
+    const [price, setPrice] = useState('$6/mon');
+    const [price1, setPrice1 ] = useState('$3/mon');
     const historyFinal = useHistory();
 
 
@@ -69,9 +70,31 @@ const FinalPage = ({ Clicked, selectedOption, Monthly, darkMode1,Total, Title })
         }
 
         function handleFinal (){
+            MakePostRequest();
             historyFinal.push('/formfinal');
         }
+   
+        const postEndpoint = "http://localhost:8000/infos";
+        const MakePostRequest = async () => {
+          try {
+          const postData = {name, email, phonenumber, plan, price, addons, price1, total, title, status  }
+          const response = await axios.post(postEndpoint, postData);
+      
+          if (response.status === 201) { // Check for a successful POST request (replace 201 with the appropriate status code)
+            console.log('POST request successful');
+      
+          } else {
+            console.error('Error making POST request:', response.status);
+          }
+        } catch (error) {
+          console.error('Error making POST request:', error);
+        }
+        }
 
+        function handlePayment(){
+         setClicked1(true)
+         setStatus('Paid')
+        }
 
     return ( 
         <div>
@@ -85,20 +108,29 @@ const FinalPage = ({ Clicked, selectedOption, Monthly, darkMode1,Total, Title })
             </p>
             <div>
                 <div  className={`flex justify-between w-[85%] h-16  ml-[7.5%] bg-opacity-70 rounded-t-lg bg-slate-200 mt-2 ${darkMode1 && 'bg-slate-900'}`}>
-                    <h1  className=" ml-4 mt-4 text-lg font-semibold tracking-wider">{ Plan  }</h1>
-                    <p  className=" mr-4 mt-4 text-lg font-semibold text-red-600">{ Price }</p>
+                    <h1  className=" ml-4 mt-4 text-lg font-semibold tracking-wider">{ plan  }</h1>
+                    <p  className=" mr-4 mt-4 text-lg font-semibold text-red-600">{ price }</p>
                 </div>
 
                 <div className={`flex justify-between w-[85%] h-20  ml-[7.5%] bg-opacity-70 bg-slate-200  ${darkMode1 && 'bg-slate-900'}`}>
-                    <h1 className=" ml-4 mt-5 font-semibold"> { Addons } </h1>
-                    <p className=" mr-4 mt-5 font-semibold text-red-600"> { Price1 }</p>
+                    <h1 className=" ml-4 mt-5 font-semibold"> { addons } </h1>
+                    <p className=" mr-4 mt-5 font-semibold text-red-600"> { price1 }</p>
                 </div>
                 <div class={`flex justify-between w-[85%] h-14 rounded-b-lg border-t border-black ml-[7.5%] bg-opacity-70 bg-slate-200  ${darkMode1 && 'bg-slate-900'} `}>
-                    <p className="ml-4 mt-3 font-semibold text-lg md:text-xl tracking-wider">Total [{ Title }]</p>
-                    <p className="mr-4 mt-3 font-semibold text-lg md:text-xl tracking-wider text-red-600"> ${Total}/{Title} </p>
+                    <p className="ml-4 mt-3 font-semibold text-lg md:text-xl tracking-wider">Total [{ title }]</p>
+                    <p className="mr-4 mt-3 font-semibold text-lg md:text-xl tracking-wider text-red-600"> ${total}/{title} </p>
                 </div>
             </div> 
-        <div class="mt-16">
+
+            <div className='flex '>
+               
+               <h1 className={`ml-[30%] w-[30%] mt-3 md:w-[20%] text-center py-3 text-lg font-bold ${darkMode1 && 'bg-gray-100'} ${clicked1 ? 'bg-green-500':'bg-gray-500'}`} >{status}</h1>
+                
+    
+               <button onClick={handlePayment} className={`button ml-2 bg-blue-500  w-[30%] md:w-[15%]  text-lg font-bold ${darkMode1 && 'bg-teal-700'}`} >Pay</button>
+           </div>
+
+        <div class="mt-10">
             <div class="flex justify-between mb-7">
                 <button onClick={handleBack}  className="back transition-all ease-in-out duration-200 ml-[7.5%] font-semibold invisibl">Go back</button>
 

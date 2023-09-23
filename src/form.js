@@ -6,10 +6,9 @@ import 'react-phone-number-input/style.css';
 
 
 
-const Form = ({ darkMode1, Name, setName }) => {
+const Form = ({ darkMode1, name, setName, email, setEmail, phonenumber, setPhoneNumber }) => {
 
-    const [Email, setEmail ] = useState("");
-    const [value, setValue] = useState()
+    
     const [isSubmitted, setIsSubmitted] = useState(null);
     const [isError, setIsError] = useState(false);
     const historytodo = useHistory();
@@ -46,43 +45,40 @@ const Form = ({ darkMode1, Name, setName }) => {
     e.preventDefault();   
   
      console.log({
-       Name, Email
+       name, email, phonenumber
      })
     
-     const text = Name.trim();
+     const text = name.trim();
   
      const numText = text.length;
      console.log('number of name character is', numText);
   
-     const word = Name.split(/\s+/);
+     const word = name.split(/\s+/);
   
       const numWord = word.length;
       console.log('the number of words in name is', numWord);
       
      
-     const uppercase = Name.toUpperCase();
+     const uppercase = name.toUpperCase();
      console.log('uppercase text ' + uppercase);
   
-     const lowercase = Name.toLowerCase();
+     const lowercase = name.toLowerCase();
       console.log('Lowercase text ' + lowercase);
   
-      const textRevs = Name.split('').reverse().join('');
+      const textRevs = name.split('').reverse().join('');
       console.log('The nameinput reversed is ' + textRevs);
   
-     if (Name === "" || Email === "") {
+     if (name === "" || email === "") {
       setIsError(true);
       setIsSubmitted(null); // Reset submitted data if there's an error
 
     } else {
       setIsError(false);
-      setIsSubmitted({ Name, Email });
+      setIsSubmitted({ name, email });
       historytodo.push('/form2');
 
     }
   
-    setEmail("");
-   
-       
   }
 
 return(
@@ -106,7 +102,7 @@ return(
             {isError && (<p  className=" md:ml-[64%] ml-[35%] text-red-500 italic text-xs mt-7">Cannot leave Empty</p>)}
             </div>
           <input type="text"
-              value={Name}
+              value={name}
               onChange={e => setName(e.target.value)}
               className={`px-2 md:mx-0 mx-auto w-[80%] bg-white  md:w-full h-10 mt-1 rounded-lg border    ${isError ? 'border-red-600 border-solid' : 'border-solid border-gray-500'}`}
               id='text'/>
@@ -116,7 +112,7 @@ return(
             {isError && (<p  className=" md:ml-[65%] ml-[35%] text-red-500 italic text-xs mt-7">Cannot leave Empty</p>)}
             </div>
           <input type="email"
-              value={Email}
+              value={email}
               onChange={e => setEmail(e.target.value)}
               className={`px-2 w-[80%] md:mx-0 mx-auto md:w-full h-10 mt-1 rounded-lg border  bg-white   ${isError ? 'border-red-600 border-solid' : 'border-solid border-gray-500'}`}
               id='text'/>
@@ -127,11 +123,13 @@ return(
             </div>
          
           <PhoneInput type="phone" 
-              value={value}
-              onChange={setValue}
+              value={phonenumber}
+              onChange={setPhoneNumber}
               className={` px-2 w-[80%] md:mx-0 mx-auto md:w-full h-10  mt-1 rounded-lg text-gray-700 border bg-white ${isError ? 'border-red-600 border-solid' : 'border-solid border-gray-500'}`}
               id='email'/>
               </div>
+
+          
         <button type='submit' className={`button bg-blue-500 mb-8 mt-2 w-[30%] md:w-[20%] md:ml-[80%] ml-[60%] text-lg font-bold ${darkMode1 && 'bg-teal-700'}`} >Register</button>
         
             {isSubmitted && (

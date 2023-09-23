@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 
 
 
-const Form2 = ({ darkMode1, Name, Monthly, setMonthly, Clicked, setClick, secondWord }) => {
+const Form2 = ({ darkMode1, Monthly, setMonthly, Clicked, setClick, secondWord }) => {
 
     const [Arcade, setArcade] = useState("$6/mon");
     const [Advanced, setAdvanced] = useState("$8/mon");
